@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="barra">
+        <h2>PAGOS</h2>
+
+        <a href="/panel" class="salir">
+            Volver
+        </a>
+    </header>
+
+    <div class="contenedor-clientes">
+
+        <div class="formulario-linea">
+
+            <p>Registrar abono</p>
+
+            <form method="POST">
+
+                <select name="prestamo_id" required>
+                    <option value="">Selecciona préstamo</option>
+
+                    {% for prestamo in prestamos %}
+                        {% if prestamo.estado != "Pagado" %}
+                            <option value="{{ prestamo.id }}">
+                                {{ prestamo.cliente }} - ${{ prestamo.monto }}
+                            </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+
+                <input type="number" step="0.01" name="cantidad" placeholder="Cantidad a abonar" required>
+
+                <button type="submit">
+                    Guardar abono
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="contenedor-prestamos">
+
+            {% for prestamo in prestamos %}
+
+            <div class="tarjeta-prestamo">
+
+                <h3>$ {{ prestamo.monto }}</h3>
+
+                <p><b>Cliente:</b> {{ prestamo.cliente }}</p>
+                <p><b>Abonado:</b> $ {{ prestamo.abonado }}</p>
+                <p><b>Saldo:</b> $ {{ prestamo.saldo }}</p>
+                <p><b>Estado:</b> {{ prestamo.estado }}</p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

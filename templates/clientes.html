@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="barra">
+        <h2>CLIENTES</h2>
+
+        <a href="/panel" class="salir">
+            Volver
+        </a>
+    </header>
+
+    <div class="contenedor-clientes">
+
+        <div class="formulario-linea">
+
+            <p>Agregar nuevo cliente</p>
+
+            <form method="POST">
+
+                <input type="text" name="nombre" placeholder="Nombre..." required>
+
+                <input type="text" name="telefono" placeholder="Teléfono..." required>
+
+                <button type="submit">
+                    Agregar
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="tabla">
+
+            <div class="fila encabezado">
+                <div>Nombre</div>
+                <div>Teléfono</div>
+                <div>Acciones</div>
+            </div>
+
+            {% for cliente in datos %}
+
+            <div class="fila">
+                <div>{{ cliente[1] }}</div>
+                <div>{{ cliente[2] }}</div>
+
+                <div>
+                    <a href="/historial_cliente/{{ cliente[0] }}">
+                        <button class="btn-historial">
+                            Historial
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

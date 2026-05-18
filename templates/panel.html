@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="barra">
+        <h2>SISTEMA DE PRÉSTAMOS</h2>
+
+        <a href="/logout" class="salir">
+            Salir
+        </a>
+    </header>
+
+    <main class="dashboard">
+
+        <h3>Bienvenido</h3>
+        <div class="tarjetas-dashboard">
+
+            <a href="/prestamos" class="tarjeta-menu">
+                <h4>PRÉSTAMOS</h4>
+            </a>
+
+            <a href="/pagos" class="tarjeta-menu">
+                <h4>PAGOS</h4>
+            </a>
+
+            <a href="/clientes" class="tarjeta-menu">
+                <h4>CLIENTES</h4>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

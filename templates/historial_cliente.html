@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial Cliente</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="barra">
+        <h2>HISTORIAL DEL CLIENTE</h2>
+
+        <a href="/clientes" class="salir">
+            Volver
+        </a>
+    </header>
+
+    <div class="contenedor-clientes">
+
+        <div class="tabla">
+
+            <div class="fila encabezado">
+                <div>Nombre</div>
+                <div>Teléfono</div>
+                <div>Estado</div>
+            </div>
+
+            <div class="fila">
+                <div>{{ cliente[1] }}</div>
+                <div>{{ cliente[2] }}</div>
+                <div>Activo</div>
+            </div>
+
+        </div>
+
+        <h3 class="titulo-seccion">Préstamos registrados</h3>
+
+        <div class="contenedor-prestamos">
+
+            {% for prestamo in prestamos %}
+
+            <div class="tarjeta-prestamo">
+
+                <h3>$ {{ prestamo.monto }}</h3>
+
+                <p><b>Interés:</b> {{ prestamo.interes }}%</p>
+                <p><b>Plazo:</b> {{ prestamo.plazo }}</p>
+                <p><b>Estado:</b> {{ prestamo.estado }}</p>
+                <p><b>Abonado:</b> $ {{ prestamo.abonado }}</p>
+                <p><b>Saldo:</b> $ {{ prestamo.saldo }}</p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

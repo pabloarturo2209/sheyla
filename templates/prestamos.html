@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="barra">
+        <h2>PRÉSTAMOS</h2>
+
+        <a href="/panel" class="salir">
+            Volver
+        </a>
+    </header>
+
+    <div class="contenedor-clientes">
+
+        <div class="formulario-linea">
+
+            <p>Agregar nuevo préstamo</p>
+
+            <form method="POST">
+
+                <select name="cliente_id" required>
+
+                    <option value="">
+                        Cliente
+                    </option>
+
+                    {% for cliente in clientes %}
+
+                    <option value="{{ cliente[0] }}">
+                        {{ cliente[1] }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <input type="number" name="monto" placeholder="Monto">
+
+                <input type="number" name="interes" placeholder="Interés %">
+
+                <input type="text" name="plazo" placeholder="Plazo">
+
+                <button type="submit">
+                    Guardar
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="contenedor-prestamos">
+
+            {% for prestamo in datos %}
+
+            <div class="tarjeta-prestamo">
+
+                <h3>$ {{ prestamo[2] }}</h3>
+
+                <p><b>Cliente:</b> {{ prestamo[1] }}</p>
+
+                <p><b>Interés:</b> {{ prestamo[3] }}%</p>
+
+                <p><b>Plazo:</b> {{ prestamo[4] }}</p>
+
+                <p><b>Estado:</b> {{ prestamo[5] }}</p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

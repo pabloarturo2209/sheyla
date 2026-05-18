@@ -1,0 +1,271 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f1f1f1;
+    color:#333;
+}
+
+.barra{
+    width:90%;
+    max-width:950px;
+    margin:25px auto;
+    background:#0f5f82;
+    color:white;
+    padding:16px 22px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    box-sizing:border-box;
+}
+
+.barra h2{
+    margin:0;
+    font-size:18px;
+}
+
+.salir{
+    position:absolute;
+    right:20px;
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.dashboard{
+    width:90%;
+    max-width:950px;
+    margin:0 auto;
+}
+
+.dashboard h3{
+    text-transform:uppercase;
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.descripcion{
+    font-size:13px;
+    color:#777;
+    margin-bottom:35px;
+}
+
+.tarjetas-dashboard{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.tarjeta-menu{
+    width:150px;
+    height:130px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:6px;
+    text-decoration:none;
+    color:#333;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+    box-shadow:0px 3px 8px rgba(0,0,0,0.05);
+}
+
+.tarjeta-menu:hover{
+    transform:translateY(-5px);
+    box-shadow:0px 5px 12px rgba(0,0,0,0.12);
+}
+
+.icono{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.tarjeta-menu h4{
+    margin:0;
+    font-size:13px;
+    color:#0f5f82;
+}
+
+.tarjeta-menu p{
+    margin:6px 0 0 0;
+    font-size:12px;
+    color:#666;
+}
+
+.login{
+    width:90%;
+    max-width:350px;
+    background:white;
+    margin:auto;
+    margin-top:80px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.login h1{
+    color:#0f5f82;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#0f5f82;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+@media(max-width:600px){
+    .barra{
+        padding:14px;
+    }
+
+    .barra h2{
+        font-size:15px;
+    }
+
+    .tarjeta-menu{
+        width:135px;
+        height:120px;
+    }
+
+    .icono{
+        font-size:30px;
+    }
+}
+
+.contenedor-clientes{
+    width:90%;
+    max-width:950px;
+    margin:auto;
+    margin-top:30px;
+}
+
+.btn-agregar{
+    width:auto;
+    padding:12px 20px;
+    margin-bottom:20px;
+}
+
+.tabla{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.08);
+}
+
+.fila{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    padding:15px;
+    border-bottom:1px solid #eee;
+    align-items:center;
+}
+
+.encabezado{
+    background:#0f5f82;
+    color:white;
+    font-weight:bold;
+}
+
+.btn-historial{
+    width:auto;
+    padding:10px 15px;
+    margin:0;
+}
+
+.formulario-linea{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.08);
+}
+
+.formulario-linea p{
+    margin:0 0 10px 0;
+    font-size:14px;
+}
+
+.formulario-linea form{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.formulario-linea input{
+    width:180px;
+    margin:0;
+    padding:10px;
+}
+
+.formulario-linea button{
+    width:auto;
+    margin:0;
+    padding:10px 20px;
+}
+
+@media(max-width:600px){
+    .formulario-linea input,
+    .formulario-linea button{
+        width:100%;
+    }
+}
+
+.titulo-seccion{
+    margin-top:30px;
+    color:#0f5f82;
+}
+
+.contenedor-prestamos{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+    gap:15px;
+}
+
+.tarjeta-prestamo{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.08);
+    border-left:5px solid #0f5f82;
+}
+
+.tarjeta-prestamo h3{
+    margin:0 0 10px 0;
+    color:#0f5f82;
+    font-size:18px;
+}
+
+.tarjeta-prestamo p{
+    margin:6px 0;
+    font-size:14px;
+}
+
+select{
+    width:180px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
